@@ -23,7 +23,7 @@
   
   /* Logo */
   .logo {
-    height: 5px;
+    height: 40px;
     width: auto;
   }
   
@@ -89,16 +89,19 @@
   /* Hero Text */
   .hero-text {
     max-width: 50%;
+    margin-left: 100px;
   }
   
   .hero-text h1 {
     font-size: 2rem;
     margin-bottom: 10px;
+    left: 100px;
   }
   
   .hero-text p {
     font-size: 1.1rem;
     margin-bottom: 20px;
+    left: 20px;
     color: #555;
   }
   
@@ -143,7 +146,7 @@
   
   /* Hero Image */
   .hero-image img {
-    max-width: 40px;
+    max-width: 500px;
     width: 100%;
     height: auto;
     border: 2px dashed #ccc; /* Just to visualize the container */
