@@ -1,0 +1,153 @@
+/* Reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling */
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #ffffff;
+  }
+  
+  /* Header styling */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ff66cc; /* Pink header background */
+    padding: 10px 20px;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 5px;
+    width: auto;
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ffe6f2;
+  }
+  
+  /* Header Right Section */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  /* Get Started Button in Header */
+  .header-get-started {
+    background-color: #ffffff;
+    color: #ff66cc;
+    border: 2px solid #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .header-get-started:hover {
+    background-color: #ffe6f2;
+    color: #ff66cc;
+  }
+  
+  /* Profile Icon */
+  .profile-icon {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+  /* Hero Section */
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+  }
+  
+  /* Hero Text */
+  .hero-text {
+    max-width: 50%;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  /* CTA Buttons */
+  .cta-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .cta-buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  /* "Chat Now" Button */
+  .chat-now-btn {
+    background-color: #ff5722; /* Example accent color */
+    color: #ffffff;
+    transition: background-color 0.3s;
+  }
+  
+  .chat-now-btn:hover {
+    background-color: #ff784e;
+  }
+  
+  /* "Get Started" Button */
+  .get-started-btn {
+    background-color: #ffffff;
+    color: #ff5722;
+    border: 2px solid #ff5722;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #ff5722;
+    color: #ffffff;
+  }
+  
+  /* Hero Image */
+  .hero-image img {
+    max-width: 40px;
+    width: 100%;
+    height: auto;
+    border: 2px dashed #ccc; /* Just to visualize the container */
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
