@@ -44,7 +44,103 @@
   nav a:hover {
     color: #ffe6f2;
   }
-  
+
+  /* Style for the navigation container */
+nav {
+  background: none;
+  padding: 10px;
+}
+
+/* Use Flexbox for the list and add a gap between buttons */
+.nav-buttons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px; /* Gap between buttons */
+}
+
+/* Style for individual nav buttons */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background: #800291;
+  color: #fff;
+  border-radius: 10px; /* Rounded corners */
+  transition: background 0.3s;
+}
+
+/* Hover state */
+.nav-btn:hover {
+  background: #ff5722;
+}
+
+/* Active button style */
+.nav-btn.active {
+  background: #ff5722;
+}
+
+
+/* Down arrow image styling */
+.down-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when Features button is active */
+.features-btn.active .down-arrow {
+  transform: rotate(180deg);
+}
+/* Features container becomes position: relative for absolute dropdown */
+.features-container {
+  position: relative;
+}
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  background: #ffffff;
+width: 800px;
+height: 800px;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* When dropdown is open, allow enough height for its content */
+.dropdown-menu.open {
+  max-height: 500px; /* adjust based on content height */
+}
+
+/* Dropdown content style */
+.dropdown-menu ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
   /* Header Right Section */
   .header-right {
     display: flex;
