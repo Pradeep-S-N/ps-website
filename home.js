@@ -3,7 +3,7 @@ const getStartedHeaderBtn = document.getElementById("getStartedHeaderBtn");
 
 if (getStartedHeaderBtn) {
   getStartedHeaderBtn.addEventListener("click", () => {
-    alert("Header Get Started button clicked!");
+    
   });
 }
 
@@ -58,3 +58,71 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const featuresBtn = document.querySelector(".features-btn");
+  const dropdownMenu = document.getElementById("dropdown-container");
+  
+  featuresBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    
+    // Check if dropdown is currently open
+    const isOpen = dropdownMenu.classList.contains("open");
+    
+    if (isOpen) {
+      // Close the dropdown and reverse the arrow rotation
+      featuresBtn.classList.remove("active");
+      dropdownMenu.classList.remove("open");
+    } else {
+      // Open the dropdown and rotate the arrow to 180°
+      featuresBtn.classList.add("active");
+      dropdownMenu.classList.add("open");
+      
+      // Calculate the Features button's position for the dropdown menu
+      const rect = featuresBtn.getBoundingClientRect();
+      dropdownMenu.style.left = rect.left + "px";
+      dropdownMenu.style.top = rect.bottom + window.scrollY + "px";
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const featuresBtn = document.querySelector(".features-btn");
+  const dropdownMenu = document.getElementById("dropdown-container");
+
+  if (featuresBtn && dropdownMenu) {
+    featuresBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      // Toggle the dropdown menu's open state
+      const isOpen = dropdownMenu.classList.contains("open");
+
+      if (isOpen) {
+        // Close the dropdown and reverse the arrow rotation
+        featuresBtn.classList.remove("active");
+        dropdownMenu.classList.remove("open");
+      } else {
+        // Open the dropdown and rotate the arrow
+        featuresBtn.classList.add("active");
+        dropdownMenu.classList.add("open");
+
+        // Calculate the Features button's position for the dropdown menu
+        const rect = featuresBtn.getBoundingClientRect();
+        dropdownMenu.style.left = rect.left + "px";
+        dropdownMenu.style.top = rect.bottom + window.scrollY + "px";
+      }
+    });
+  }
+});
+// Function to toggle the dropdown menu
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown-container');
+  dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+}
+
+// Example: Toggle dropdown when a button is clicked
+// Uncomment below to add a button trigger for testing
+/*
+const btn = document.createElement('button');
+btn.textContent = 'Toggle Features';
+btn.addEventListener('click', toggleDropdown);
+document.body.insertBefore(btn, document.body.firstChild);
+*/

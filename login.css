@@ -1,0 +1,102 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body */
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Fill the viewport height */
+    background-color: #fff; /* White background */
+  }
+  
+  /* Container for everything */
+  .container {
+    text-align: center;
+    width: 300px; /* Adjust as needed */
+    margin: auto;
+  }
+  
+  /* Logo at the top */
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  /* Main heading */
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+  
+  /* Subheading */
+  .sub-heading {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Input field for Gmail */
+  .input-field {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #000;
+    border-radius: 9999px; /* Large radius for a "pill" look */
+    outline: none;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* "Continue" button */
+  .btn-continue {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #6D4AFF; /* Purple color */
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  /* The "or" text between buttons */
+  .or-text {
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* Social login buttons (Google, Apple) */
+  .btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  /* Logo inside social buttons */
+  .btn-social img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    object-fit: contain;
+  }
+  

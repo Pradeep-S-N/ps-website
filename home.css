@@ -20,10 +20,20 @@
     background-color: #ff66cc; /* Pink header background */
     padding: 10px 20px;
   }
+  .header-left {
+    width: 50px;          /* Adjust the size as needed */
+    height: 50px;         /* Adjust the size as needed */
+    border-radius: 50%;   /* Makes the container round */
+    overflow: hidden;     /* Ensures the image doesn't spill out of the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Optional: add a background color */
+  }
   
   /* Logo */
   .logo {
-    height: 40px;
+    height: 50px;
     width: auto;
   }
   
@@ -101,23 +111,25 @@ nav {
 .features-container {
   position: relative;
 }
-/* Dropdown menu styling */
+
+
+/* Generic Dropdown Menu styling using max-height for animation */
 .dropdown-menu {
   position: absolute;
   background: #ffffff;
-width: 800px;
-height: 800px;
+  width: 250px; /* Adjust width as needed */
   border-radius: 10px;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.5s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  margin-top: 20px;
 }
 
 /* When dropdown is open, allow enough height for its content */
 .dropdown-menu.open {
-  max-height: 500px; /* adjust based on content height */
+  max-height: 500px; /* Adjust based on content height */
 }
 
 /* Dropdown content style */
@@ -141,7 +153,29 @@ height: 800px;
   color: #333;
   display: block;
 }
-  /* Header Right Section */
+
+/* Additional styles for positioning the container */
+#dropdown-container {
+  position: absolute; /* Adjust as needed for your layout */
+  top: 60px; /* Example position */
+  right: 20px; /* Example position */
+  /* Removed display: none; to avoid conflict */
+}
+/* Down arrow styling */
+.down-arrow {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when active */
+.features-btn.active .down-arrow {
+  transform: rotate(180deg);
+}
+
+  /* Header Right Sect
+  ion */
   .header-right {
     display: flex;
     align-items: center;
