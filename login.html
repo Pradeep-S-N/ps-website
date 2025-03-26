@@ -39,6 +39,35 @@
     </button>
   </div>
 
+<!-- OTP Modal (popup) -->
+<div class="modal" id="otpModal">
+  <div class="modal-content">
+    <h2>Check your email for a code</h2>
+    <p>We've sent a 6-character code to <span id="userEmailDisplay"></span></p>
+    <p class="small-text">The code expires shortly, so please enter it soon.</p>
+    
+    <div class="otp-inputs">
+      <!-- 6 individual inputs for 6 digits/characters -->
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+      <input type="text" maxlength="1" class="otp-input" />
+    </div>
+
+    <!-- Continue button (initially disabled) -->
+    <button class="btn-continue-disabled" id="otpContinueBtn" disabled>continue</button>
+
+    <!-- Resend code link -->
+    <p class="resend-text">
+      Can't find your code? 
+      <a href="#" id="resendCodeLink">Request a new code</a>
+    </p>
+  </div>
+</div>
+
+
   <script src="login.js"></script>
 </body>
 </html>

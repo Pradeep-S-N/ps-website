@@ -100,3 +100,86 @@
     object-fit: contain;
   }
   
+  /* -------------------------------------------------- */
+/* Modal (Popup) Styles */
+/* -------------------------------------------------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hidden by default; will be shown via JS */
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+}
+
+.modal-content .small-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* OTP input fields */
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Continue button inside modal (disabled style) */
+.btn-continue-disabled {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: gray; /* Gray when disabled */
+  border: none;
+  border-radius: 9999px;
+  cursor: not-allowed;
+  margin-bottom: 20px;
+}
+
+/* Once enabled, you can reuse the .btn-continue style or define a new style */
+.btn-continue-enabled {
+  background-color: #6D4AFF; /* or your desired color when enabled */
+  cursor: pointer;
+}
+
+/* Resend code text */
+.resend-text {
+  font-size: 0.9rem;
+}
+
+/* Link styling (adjust as needed) */
+.resend-text a {
+  color: #6D4AFF;
+  text-decoration: none;
+  font-weight: bold;
+}
