@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="login.css" />
+
+
+  
+   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+   <!-- Add Firebase Authentication -->
+   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+   <!-- Your Firebase configuration script can also be placed here -->
+   <script defer src="auth.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyA7EUoKgkCQQQgwOw6gFQJolRnA21AT4A0",
+  authDomain: "teamup-a4672.firebaseapp.com",
+  projectId: "teamup-a4672",
+  storageBucket: "teamup-a4672.firebasestorage.app",
+  messagingSenderId: "937414334011",
+  appId: "1:937414334011:web:a494d71574f437e38cae1e",
+  measurementId: "G-FYTJF5THW9"
+    };
+    // Initialize Firebase
+    if (!firebase.apps.length) {
+   firebase.initializeApp(firebaseConfig);
+ }
+  </script>
+
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-title">
+      <span id="headerAction">Sign in to</span>
+      <img src="images/Logo-2.png" alt="Logo" class="header-logo">
+    </div>
+
+    <!-- in <head> or right after your firebase-app script -->
+<script>
+  // assume firebase.initializeApp(...) has already run
+  firebase.auth().onAuthStateChanged(user => {
+    const path = window.location.pathname.split('/').pop();
+
+    if (user) {
+      // If logged in, don't let them see login/signup pages:
+      if (['login.html','index.html','home.html'].includes(path)) {
+        window.location.replace('dashboard.html');
+      }
+    } else {
+      // If not logged in, don't let them see dashboard:
+      if (path === 'dashboard.html') {
+        window.location.replace('login.html');
+      }
+    }
+  });
+</script>
+
+  </header>
+
+  <!-- Main content (white area full width and height below header) -->
+  <main class="main-content">
+    <div class="content-container">
+      <!-- Form container -->
+      <div class="form-container">
+        <!-- Sign In Page -->
+        <section id="signInPage" class="form-page active">
+          <form class="form" id="signInForm">
+            <label for="signin-username">Username or Email</label>
+            <input type="text" id="signin-username" name="email" placeholder="Username or Email" required>
+            <!-- Wrap the password input in a container for relative positioning -->
+            <div class="password-container">
+            <label for="signin-password">Password</label>
+            <input type="password" id="signin-password" name="password" placeholder="Password" required>
+            <!-- "Forgot?" link positioned at the top right of the container -->
+           <span class="forgot-password" id="forgotPasswordBtn">Forgot?</span>
+           </div>
+            <!-- The button below triggers a JavaScript event that sends a POST to /login -->
+            <button type="button" class="btn btn-black" id="signInBtn">Sign In</button>
+            <div class="divider">or</div>
+            <!-- Google OAuth for Sign In (will redirect to your /auth/google endpoint) -->
+            <button type="button" class="btn btn-outline" id="signInGoogle">
+              <img src="images/google.png" alt="Google Logo" class="icon">
+              Sign In with Google
+            </button>
+            <p class="bottom-text">
+              Don’t have an account? <span class="link" id="goToSignUp">Sign up</span>.
+            </p>
+          </form>
+        </section>
+
+        <!-- Sign Up Page -->
+        <section id="signUpPage" class="form-page">
+          <form class="form" id="signUpForm">
+            <!-- Google OAuth for Sign Up (will redirect to your /auth/google endpoint) -->
+            <button type="button" class="btn btn-black" id="signUpGoogle">
+              <img src="images/google.png" alt="Google Logo" class="icon">
+              Sign up with Google
+            </button>
+            <div class="divider">or</div>
+            <!-- Continue with Email brings the user to the Create Account page -->
+            <button type="button" class="btn btn-outline" id="continueWithEmail">
+              Continue with Email
+            </button>
+            <p class="bottom-text">
+              Already have an account? <span class="link" id="goToSignInFromSignUp">Sign in</span>.
+            </p>
+          </form>
+        </section>
+
+        <!-- Create Account Page -->
+        <section id="createAccountPage" class="form-page">
+          <form class="form" id="registerForm">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" name="name" placeholder="Full Name" required>
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username" name="username" placeholder="Username" required>
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Email" required>
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" placeholder="Password" required>
+            
+            <!-- Terms and Conditions Checkbox -->
+            <div class="terms-container">
+              <input type="checkbox" id="termsCheckbox" name="terms">
+              <label for="termsCheckbox">
+                I agree with Stitchez's Terms of Service, Privacy Policy, and default Notification Setting.
+              </label>
+            </div>
+            <!-- Error message (hidden by default) -->
+            <span class="error-message" id="termsError"></span>
+            
+            <!-- Button triggers JavaScript to post data to /register -->
+            <button type="button" class="btn btn-black" id="createAccountBtn">Create an Account</button>
+            <p class="bottom-text">
+              Already have an account? <span class="link" id="goToSignInFromCreate">Sign in</span>.
+            </p>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Popup (hidden by default) -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" id="closePopup">&times;</span>
+      <p>This is a popup (e.g. for Forgot Password or Email Confirmation)</p>
+    </div>
+  </div>
+
+  <!-- Back to Home Button -->
+  <a href="home.html" class="back-btn">
+    <img src="images/back.svg" alt="Back Arrow" class="back-icon">
+    Back to Home
+  </a>
+
+  <!-- login Content (this could be your dashboard page once logged in) -->
+  <div class="login-content" id="loginContent" style="display: none;">
+    <header class="login-header">
+      <h2>Welcome, <span id="userEmailDisplay"></span></h2>
+      <button class="btn sign-out-btn" id="signOutBtn">Sign Out</button>
+    </header>
+    <div class="login-details">
+      <p>This is your login page.</p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

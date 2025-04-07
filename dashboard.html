@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+
+    <script defer src="auth.js"></script> <!-- Make sure this is linked properly -->
+
+    <!-- in <head> or right after your firebase-app script -->
+<script>
+    // assume firebase.initializeApp(...) has already run
+    firebase.auth().onAuthStateChanged(user => {
+      const path = window.location.pathname.split('/').pop();
+  
+      if (user) {
+        // If logged in, don't let them see login/signup pages:
+        if (['login.html','index.html','home.html'].includes(path)) {
+          window.location.replace('dashboard.html');
+        }
+      } else {
+        // If not logged in, don't let them see dashboard:
+        if (path === 'dashboard.html') {
+          window.location.replace('login.html');
+        }
+      }
+    });
+  </script>
+  
+</head>
+
+
+<body>
+  <header>
+    <h1>Welcome to Your Dashboard</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+  <main>
+    <p>You have successfully logged in!</p>
+  </main>
+  
+  <script src="dashboard.js"></script>
+</body>
+</html>
