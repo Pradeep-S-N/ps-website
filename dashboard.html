@@ -10,26 +10,6 @@
 
     <script defer src="auth.js"></script> <!-- Make sure this is linked properly -->
 
-    <!-- in <head> or right after your firebase-app script -->
-<script>
-    // assume firebase.initializeApp(...) has already run
-    firebase.auth().onAuthStateChanged(user => {
-      const path = window.location.pathname.split('/').pop();
-  
-      if (user) {
-        // If logged in, don't let them see login/signup pages:
-        if (['login.html','index.html','home.html'].includes(path)) {
-          window.location.replace('dashboard.html');
-        }
-      } else {
-        // If not logged in, don't let them see dashboard:
-        if (path === 'dashboard.html') {
-          window.location.replace('login.html');
-        }
-      }
-    });
-  </script>
-  
 </head>
 
 

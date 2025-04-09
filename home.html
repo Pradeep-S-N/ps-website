@@ -26,6 +26,9 @@
   });
 </script>
 
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+<script defer src="auth.js"></script>
 </head>
 <body>
   <!-- Header Section -->
@@ -65,14 +68,12 @@
 
     <!-- Header Right Section -->
     <div class="header-right">
-      <!-- "Get Started" Button in Header -->
-      <a href="#" id="getStartedHeaderBtn">
-        <button class="header-get-started">Get Started</button>
-      </a>
-      <a href="#" id="loginHeaderBtn">
-        <img src="images/profile.png" alt="login" class="login-icon" />
-      </a>
       
+
+<a href="javascript:void(0)" class="icon-button profile-button" aria-label="Profile">
+            <img src="images/profile.png" alt="Profile">
+            
+            </a>
       
     </div>
   </header>

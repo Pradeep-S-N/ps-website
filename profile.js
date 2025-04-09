@@ -123,10 +123,10 @@ createAccountBtn.addEventListener('click', async () => {
 
   try {
     await auth.createUserWithEmailAndPassword(email, password);
-    // Optionally, you can update the user login with name/username:
+    // Optionally, you can update the user profile with name/username:
     const user = auth.currentUser;
     if (user) {
-      user.updatelogin({
+      user.updateProfile({
         displayName: signupName.value || signupUsername.value
       });
     }
@@ -187,33 +187,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-  .then(() => console.log("Persistence: LOCAL"))
-  .catch(err => console.error(err));
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const getStartedBtn = document.getElementById('getStartedHeaderBtn');
-    const loginBtn      = document.getElementById('loginHeaderBtn');
-  
-    function routeAccordingToAuth() {
-      const user = firebase.auth().currentUser;
-      if (user) {
-        // Already signed in → go to dashboard
-        getStartedBtn.href = 'dashboard.html';
-        loginBtn.href      = 'dashboard.html';
-      } else {
-        // Not signed in → go to login
-        getStartedBtn.href = 'login.html';
-        loginBtn.href      = 'login.html';
-      }
-    }
-  
-    // Update routes once on load (firebase.currentUser may be null until onAuthStateChanged fires)
-    routeAccordingToAuth();
-  
-    // Also update routes when auth state changes:
-    firebase.auth().onAuthStateChanged(() => {
-      routeAccordingToAuth();
-    });
-  });
-  

@@ -285,3 +285,48 @@ nav {
     object-fit: cover;
   }
   
+
+  /* Header Right - contains the hamburger, profile, search */
+.header-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 3000;
+  gap: 25px;
+  align-items: center;
+  right: 50px;
+}
+
+/* Icon Buttons (Profile,) */
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 3000;
+}
+
+.icon-button img {
+  width: 30px;
+  height: auto;
+  display: block;
+}
+
+/* Updated Interactive Icon Button Layout */
+.icon-button {
+  display: inline-flex;
+  flex-direction: row;   /* Arrange icon and text side-by-side */
+  align-items: center;     /* Vertically center the icon and label */
+  justify-content: center;
+}
+
+/* Updated Navigation Label Styling */
+.nav-label {
+  font-family: 'Lexend Exa', serif;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 8px;       /* Space between icon and label */
+  font-size: 10px;    
+  color: #2a2a2a;         /* Text color */
+  text-align: left;       /* Text alignment */
+}

@@ -280,8 +280,8 @@ a:focus {
 }
 
 
-/* login (Account) UI styling */
-.login-header {
+/* Profile (Account) UI styling */
+.profile-header {
   background-color: #000;
   color: #fff;
   padding: 20px;
@@ -301,7 +301,7 @@ a:focus {
 .btn.sign-out-btn:hover {
   border-style: dashed;
 }
-.login-content {
+.profile-content {
   padding: 20px;
 }
 
@@ -317,4 +317,3 @@ a:focus {
     flex-direction: row;
   }
 }
-
