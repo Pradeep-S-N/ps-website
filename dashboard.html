@@ -16,11 +16,86 @@
 <body>
   <header>
     <h1>Welcome to Your Dashboard</h1>
-    <button id="logoutBtn">Logout</button>
+   <!-- Profile -->
+   <div class="profile">
+    <img src="user-avatar.jpg" alt="Profile" />
+  </div>
   </header>
-  <main>
-    <p>You have successfully logged in!</p>
-  </main>
+
+  <div class="dashboard">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="your-logo.png" alt="Logo" />
+      </div>
+
+      
+
+      <!-- Team Info -->
+      <div class="team-info">
+        <div class="team-name">Team Name</div>
+        <div class="team-stats">
+          <span>12 Members</span> · <span>5 Active</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav">
+        <button data-view="discussion">Discussion Forum</button>
+        <button data-view="activity">Activity</button>
+        <button data-view="notifications">Notifications</button>
+        <button data-view="faq">FAQ</button>
+        <button data-view="team-management">Team Management</button>
+        <button data-view="settings">Settings</button>
+        <button data-view="support">Support</button>
+      </nav>
+
+      <!-- Bottom “Team” button -->
+      <div class="bottom-nav">
+        <button data-view="team">Team up</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <section id="discussion" class="view active">
+        <h2>Discussion Forum</h2>
+        <p>Here’s where the forum posts will go…</p>
+      </section>
+      <section id="activity" class="view">
+        <h2>Activity</h2>
+        <p>Recent activity will appear here…</p>
+      </section>
+      <section id="notifications" class="view">
+        <h2>Notifications</h2>
+        <p>Your notifications show up here…</p>
+      </section>
+      <section id="faq" class="view">
+        <h2>FAQ</h2>
+        <p>Frequently asked questions…</p>
+      </section>
+      <section id="team-management" class="view">
+        <h2>Team Management</h2>
+        <p>Manage your team here…</p>
+      </section>
+      <section id="settings" class="view">
+        <h2>Settings</h2>
+        <p>Adjust your settings…</p>
+      </section>
+      <section id="support" class="view">
+        <h2>Support</h2>
+        <p>Support resources…</p>
+      </section>
+      <section id="team" class="view">
+        <h2>Team up</h2>
+        <p>Overview of your teams…</p>
+      </section>
+    </main>
+
+  </div>
   
   <script src="dashboard.js"></script>
 </body>

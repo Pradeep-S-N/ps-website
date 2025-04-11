@@ -22,3 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// Grab all buttons (both nav and bottom-nav)
+const buttons = document.querySelectorAll('button[data-view]');
+const views   = document.querySelectorAll('.view');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Clear active state
+    buttons.forEach(b => b.classList.remove('active'));
+    views.forEach(v => v.classList.remove('active'));
+
+    // Activate this button + corresponding view
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.view).classList.add('active');
+  });
+});
+
+// Activate the first button by default
+buttons[0].classList.add('active');
