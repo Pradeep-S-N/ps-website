@@ -41,5 +41,11 @@ document.getElementById('find-team-btn').addEventListener('click', function(e) {
   window.location.href = 'team.html';
 });
 
-
+document.getElementById('dashboard').addEventListener('click', function(e) {
+  e.preventDefault();
+  // any logic based on data-option
+  const option = this.dataset.option;
+  // then navigate
+  window.location.href = 'dashboard.html';
+});
 

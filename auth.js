@@ -1,11 +1,12 @@
 // Initialize Firebase (Replace with your Firebase config)
 const firebaseConfig = {
-  apiKey: "AIzaSyAOfQiQVFffzI7uClYn4sDhk7Xxf0LSgsw",
-    authDomain: "stitchez-lifestyle.firebaseapp.com",
-    projectId: "stitchez-lifestyle",
-    storageBucket: "stitchez-lifestyle.firebasestorage.app",
-    messagingSenderId: "160722441229",
-    appId: "1:160722441229:web:b9ee8fa51350ee65d93144",
+  apiKey: "AIzaSyA7EUoKgkCQQQgwOw6gFQJolRnA21AT4A0",
+  authDomain: "teamup-a4672.firebaseapp.com",
+  projectId: "teamup-a4672",
+  storageBucket: "teamup-a4672.firebasestorage.app",
+  messagingSenderId: "937414334011",
+  appId: "1:937414334011:web:a494d71574f437e38cae1e",
+  measurementId: "G-FYTJF5THW9"
     
 };
 

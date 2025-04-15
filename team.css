@@ -15,32 +15,99 @@
     padding: 1rem;
   }
   
-  /* HEADER */
-  .site-header {
-    background: hotpink;
-    color: #fff;
-  }
-  .header-inner {
+  /* Header styling */
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #ff66cc; /* Pink header background */
+    padding: 10px 20px;
   }
-  .logo {
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-  .main-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.2);
-  }
-  .main-nav a:hover {
-    background: rgba(255,255,255,0.4);
+  .header-left {
+    width: 50px;          /* Adjust the size as needed */
+    height: 50px;         /* Adjust the size as needed */
+    border-radius: 50%;   /* Makes the container round */
+    overflow: hidden;     /* Ensures the image doesn't spill out of the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; /* Optional: add a background color */
   }
   
+  /* Logo */
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  
+ 
+
+  /* Header Right Sect
+  ion */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  
+  
+  /* login Icon */
+  .login-icon {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+  }
+  
+
+  /* Header Right - contains the hamburger, profile, search */
+  .header-right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 3000;
+    gap: 25px;
+    align-items: center;
+    right: 50px;
+  }
+  
+  /* Icon Buttons (Profile,) */
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 3000;
+  }
+  
+  .icon-button img {
+    width: 30px;
+    height: auto;
+    display: block;
+  }
+  
+  /* Updated Interactive Icon Button Layout */
+  .icon-button {
+    display: inline-flex;
+    flex-direction: row;   /* Arrange icon and text side-by-side */
+    align-items: center;     /* Vertically center the icon and label */
+    justify-content: center;
+  }
+  
+  /* Updated Navigation Label Styling */
+  .nav-label {
+    font-family: 'Lexend Exa', serif;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 8px;       /* Space between icon and label */
+    font-size: 10px;    
+    color: #2a2a2a;         /* Text color */
+    text-align: left;       /* Text alignment */
+  }
+
+
   /* PAGE TITLE + SUBHEADING */
   .page-title {
     text-align: center;
